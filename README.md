@@ -16,6 +16,7 @@ No cloud services, no external APIs for the core pipeline, no data leaves your m
 - 🔍 **Semantic search** — search using natural language, not just exact keywords
 - ⚡ **FAISS vector search** — instant similarity search, even across large screenshot collections
 - 💾 **Local SQLite database** — all metadata, OCR text, and embeddings stored locally
+- 🔁 **Smart screen-change detection** — skips saving near-duplicate screenshots when the screen hasn't meaningfully changed, reducing storage use and redundant processing
 - 🌐 **Streamlit UI** — simple, interactive search interface in your browser
 
 ## Architecture
