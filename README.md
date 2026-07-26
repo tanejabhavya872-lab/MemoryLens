@@ -81,18 +81,32 @@ Or simply double-click `run_app.bat` to launch the app directly.
 ## Project Structure
 ## Roadmap
 
-- [x] Screen capture
-- [x] OCR text extraction
-- [x] CLIP-based image embeddings
-- [x] FAISS vector search
-- [x] SQLite storage
-- [x] Streamlit search UI
-- [ ] Hybrid search (combining OCR keyword + semantic search with ranking)
-- [ ] FastAPI backend
-- [ ] Screen-change detection (avoid redundant captures)
-- [ ] Duplicate screenshot removal
-- [ ] Auto-start on system boot
+### Completed
+- [x] Project setup, folder structure, Git/GitHub
+- [x] Screen capture (mss)
+- [x] Screen-change detection (skip duplicate captures)
+- [x] OCR text extraction (EasyOCR)
+- [x] SQLite database (screenshots, OCR text, embeddings)
+- [x] CLIP embeddings (image + text)
+- [x] FAISS vector similarity search
+- [x] Streamlit UI
+- [x] Hybrid search (keyword + semantic scoring)
+- [x] FastAPI backend (API/UI separation)
+- [x] Launcher scripts (`run_app.bat`, optional `start_capture.bat`)
 
+### Planned
+- [ ] Re-run OCR + embeddings on newly captured screenshots
+- [ ] Duplicate/near-duplicate cleanup for older screenshots
+- [ ] Date/time filtering and a "browse by date" view
+- [ ] Retention policy (auto-delete screenshots older than X days)
+- [ ] Simple pause/resume control for capture
+- [ ] Additional API endpoints (e.g. fetch single screenshot metadata)
+## Optional: Auto-start capture on login
+`start_capture.bat` can be used to run the screen capture script in the background.
+To have it start automatically when you log in to Windows, you can register it as a
+scheduled task via Task Scheduler (Trigger: "At log on", Action: run `start_capture.bat`,
+check "Hidden" to suppress the console window). This is optional — capture also works
+fine when started manually.
 ## Privacy Note
 
 This tool captures screenshots of your own screen, which may include sensitive personal information. All data is stored **locally only** — screenshots, extracted text, and the database are excluded from version control via `.gitignore` and are never uploaded anywhere.
