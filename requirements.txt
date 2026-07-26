@@ -6,3 +6,6 @@ ftfy
 regex
 faiss-cpu
 streamlit
+fastapi
+uvicorn
+requests
